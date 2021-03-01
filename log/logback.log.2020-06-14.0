@@ -1,0 +1,5 @@
+2020-06-14 08:45:47.887  WARN 17316 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h11m16s25ms342µs205ns).
+2020-06-14 14:12:32.132  INFO 7116 --- [restartedMain] c.s.SpringbootBlogApplication            : Starting SpringbootBlogApplication on 羽绒333333 with PID 7116 (C:\Users\Administrator\IdeaProjects\springboot-blog\target\classes started by Administrator in C:\Users\Administrator\IdeaProjects\springboot-blog)
+2020-06-14 14:12:32.134  INFO 7116 --- [restartedMain] c.s.SpringbootBlogApplication            : The following profiles are active: pro
+2020-06-14 14:12:33.581  WARN 7116 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-14 14:12:35.670  INFO 7116 --- [restartedMain] c.s.SpringbootBlogApplication            : Started SpringbootBlogApplication in 3.899 seconds (JVM running for 4.407)

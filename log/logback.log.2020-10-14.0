@@ -1,0 +1,46 @@
+2020-10-14 00:02:05.353  WARN 28588 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-14 00:02:32.484  INFO 28588 --- [http-nio-8081-exec-1] com.springbootblog.aspect.LogAspect      : request:{url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.springbootblog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2020-10-14 00:02:32.494  WARN 28588 --- [http-nio-8081-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-10-14 00:02:32.565  INFO 28588 --- [http-nio-8081-exec-1] com.springbootblog.aspect.LogAspect      : ---doAfter
+2020-10-14 00:02:32.565  INFO 28588 --- [http-nio-8081-exec-1] com.springbootblog.aspect.LogAspect      : result:types
+2020-10-14 00:03:21.125  INFO 28588 --- [http-nio-8081-exec-4] com.springbootblog.aspect.LogAspect      : request:{url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.springbootblog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2020-10-14 00:03:21.133  INFO 28588 --- [http-nio-8081-exec-4] com.springbootblog.aspect.LogAspect      : ---doAfter
+2020-10-14 00:03:21.134  INFO 28588 --- [http-nio-8081-exec-4] com.springbootblog.aspect.LogAspect      : result:types
+2020-10-14 00:03:53.119  INFO 7276 --- [main] c.s.SpringbootBlogApplicationTests       : Starting SpringbootBlogApplicationTests on ÓðÈÞ333333 with PID 7276 (started by Administrator in C:\Users\Administrator\IdeaProjects\springboot-blog)
+2020-10-14 00:03:53.120  INFO 7276 --- [main] c.s.SpringbootBlogApplicationTests       : The following profiles are active: ali
+2020-10-14 00:03:56.376  WARN 7276 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-14 00:04:01.219  INFO 7276 --- [main] c.s.SpringbootBlogApplicationTests       : Started SpringbootBlogApplicationTests in 8.486 seconds (JVM running for 9.321)
+2020-10-14 00:59:38.731  INFO 39184 --- [main] c.s.SpringbootBlogApplicationTests       : Starting SpringbootBlogApplicationTests on ÓðÈÞ333333 with PID 39184 (started by Administrator in C:\Users\Administrator\IdeaProjects\springboot-blog)
+2020-10-14 00:59:38.732  INFO 39184 --- [main] c.s.SpringbootBlogApplicationTests       : The following profiles are active: ali
+2020-10-14 00:59:41.737  WARN 39184 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-14 00:59:46.446  INFO 39184 --- [main] c.s.SpringbootBlogApplicationTests       : Started SpringbootBlogApplicationTests in 8.095 seconds (JVM running for 8.932)
+2020-10-14 01:00:16.229  INFO 36296 --- [main] c.s.SpringbootBlogApplicationTests       : Starting SpringbootBlogApplicationTests on ÓðÈÞ333333 with PID 36296 (started by Administrator in C:\Users\Administrator\IdeaProjects\springboot-blog)
+2020-10-14 01:00:16.230  INFO 36296 --- [main] c.s.SpringbootBlogApplicationTests       : The following profiles are active: ali
+2020-10-14 01:00:19.437  WARN 36296 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-14 01:00:24.086  INFO 36296 --- [main] c.s.SpringbootBlogApplicationTests       : Started SpringbootBlogApplicationTests in 8.304 seconds (JVM running for 9.203)
+2020-10-14 01:10:14.682  WARN 34764 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-14 01:10:18.382  WARN 34764 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2020-10-14 01:10:18.509 ERROR 34764 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-10-14 01:15:30.881  WARN 16776 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-14 01:15:54.609  INFO 16776 --- [http-nio-8080-exec-1] com.springbootblog.aspect.LogAspect      : request:{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.springbootblog.web.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
+2020-10-14 01:15:55.198  WARN 16776 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-10-14 01:15:55.257  WARN 16776 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-10-14 01:15:55.355  INFO 16776 --- [http-nio-8080-exec-1] com.springbootblog.aspect.LogAspect      : ---doAfter
+2020-10-14 01:15:55.355  INFO 16776 --- [http-nio-8080-exec-1] com.springbootblog.aspect.LogAspect      : result:index
+2020-10-14 01:16:06.344  INFO 16776 --- [http-nio-8080-exec-5] com.springbootblog.aspect.LogAspect      : request:{url='http://localhost:8080/blog/99', ip='0:0:0:0:0:0:0:1', classMethod='com.springbootblog.web.IndexController.blog', args=[99, {}]}
+2020-10-14 01:16:06.663  INFO 16776 --- [http-nio-8080-exec-5] com.springbootblog.aspect.LogAspect      : ---doAfter
+2020-10-14 01:16:06.663  INFO 16776 --- [http-nio-8080-exec-5] com.springbootblog.aspect.LogAspect      : result:blog
+2020-10-14 12:50:30.127  WARN 16776 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h18m28s195ms29Âµs200ns).

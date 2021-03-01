@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title th:replace="${title}">博客详情页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="./static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="./static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="./static/css/animate.compat.css" th:href="@{/css/animate.compat.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+</head>
+<body>
+<!--导航-->
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">yurong333</h2>
+            <a href="#" th:href="@{/}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active' "><i
+                    class="home icon"></i> 首页</a>
+            <a href="#" th:href="@{/types/-1}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active' "><i
+                    class="idea icon"></i>分类</a>
+            <a href="#" th:href="@{/tags/-1}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active' "><i
+                    class="tags icon"></i>标签</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active' "><i
+                    class="clone icon"></i>归档</a>
+            <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active' "><i
+                    class="info icon"></i>关于我</a>
+            <!--            <a href="#" th:href="@{/admin}" target="_blank" class="m-item item m-mobile-hide" th:classappend="${n==6} ? 'active' "><i class="user icon"></i>后台管理</a>-->
+            <div class="m-item right item">
+                <form name="searchId" action="#" th:action="@{/search}" method="post">
+                    <div class="ui icon inverted  m-mobile-hide input">
+                        <!-- 需要将传的text内容定义一个name，起名为"query" -->
+                        <input type="text" name="query" placeholder="search..." th:value="${query}">
+                        <i onclick="document.forms['searchId'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--底部-->
+<footer th:fragment="footer" class="ui  inverted vertical segment m-padded-tb-mini m-footer footer ">
+    <!--返回顶部的按钮-->
+    <div>
+        <button id="toTop-btn" class="ui  button m-toTop-btn m-mobile-hide"><i class="arrow up icon"></i></button>
+    </div>
+
+    <div class="ui  center aligned container">
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+        <!--一般标注是自己的东西-->
+        <br>
+        <br>
+        <span class="m-text-thin m-text-spaced "><a href="https://beian.miit.gov.cn/#/Integrated/index">粤ICP备2020103061号</a></span>
+        <div style="width:300px;margin:0 auto; padding:1px 0; ">
+<!--            <span>| Copyright © 2019-2020</span>-->
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="../static/images/gongan.png" style="float:left;"/>
+                <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#1d75b3;">粤公网安备44030502006261号</p>
+            </a>
+        </div>
+    </div>
+
+</footer>
+
+<!--js-->
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js"
+            th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+    <script>
+        $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    </script>
+    <script>
+        //点击toTop-btn按钮返回页面顶部
+        $('#toTop-btn').click(function () {
+            $(window).scrollTo(0, 50);
+        });
+    </script>
+    <script>
+        $('.ui.dropdown').dropdown({
+            on: 'hover'
+        });
+    </script>
+    <!--网站运行时间-->
+    <script>
+        var now = new Date();
+
+        function createtime() {
+            var grt = new Date("10/28/2020 16:08:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+            now.setTime(now.getTime() + 250);
+            days = (now - grt) / 1000 / 60 / 60 / 24;
+            dnum = Math.floor(days);
+            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+
+        setInterval("createtime()", 250);
+    </script>
+    <!--天气预报-->
+    <script type="text/javascript">
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {     //移动终端浏览器版本信息
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应用程序，没有头部与底部
+                };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+        if (browser.versions.mobile) {
+        } else if (!browser.versions.mobile) { //非移动端，动态加载js和div
+            <!-- 天气预报 -->
+            WIDGET = {FID: 'EtgqPWMbdv'}
+            var script4 = document.createElement('script');
+            script4.type = 'text/javascript';
+            script4.src = 'https://apip.weatherdt.com/float/static/js/r.js?v=1111';
+            $('body').append(script4);
+        }
+    </script>
+</th:block>
+
+
+</body>
+</html>

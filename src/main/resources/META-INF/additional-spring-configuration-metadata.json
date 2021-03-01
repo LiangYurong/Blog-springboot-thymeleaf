@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "resources.add-mappings",
+      "type": "java.lang.String",
+      "description": "Description for resources.add-mappings."
+  }
+] }

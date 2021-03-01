@@ -1,0 +1,251 @@
+/**
+
+这是个人自定义的一些css样式.
+
+!important :添加级别才能进行覆盖
+
+为什么起名叫padded，因为是填充的意思。
+
+margin: auto !important;    水平宽度居中
+
+*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url("../images/bg.png"); /* 整个博客的背景图片 */
+    background-size: cover; /* 背景图片覆盖 */
+    background-attachment: fixed; /* 背景图片不随着滚动条滚动而滚动 */
+}
+
+
+.container {
+    min-height: 100%;
+}
+
+main {
+    padding-bottom: 100px;
+}
+
+/* main的padding-bottom值要等于或大于footer的height值 */
+footer {
+    height: 100px;
+    margin-top: -100px;
+}
+
+
+/*返回顶部的按钮，始终固定在页面的右下角*/
+.m-toTop-btn {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+}
+
+.m-padded-mini {
+    padding: 0.2em !important;
+}
+
+.m-padded-tiny {
+    padding: 0.3em !important;
+}
+
+.m-padded {
+    padding: 1em !important;
+}
+
+.m-padded-tb-mini {
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+
+.m-padded-tb-tiny {
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+
+.m-padded-tb-small {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+.m-padded-tb {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+
+.m-padded-tb-large {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+.m-padded-tb-big {
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+
+.m-padded-tb-huge {
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+
+.m-padded-tb-massive {
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+
+/*定义文章的左右间距 , 响应式*/
+.m-padded-lr-responsive {
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+
+
+/* 设置字体样式 */
+.m-text {
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8;
+}
+
+.m-text-thin {
+    font-weight: 300 !important;
+}
+
+/* 字间距 */
+.m-text-spaced {
+    letter-spacing: 1px !important;
+}
+
+/* 行间距 */
+.m-text-line {
+    line-height: 1.8;
+}
+
+/* 透明度 */
+.m-opacity-mini {
+    opacity: 0.8 !important;
+}
+
+.m-opacity-tiny {
+    opacity: 0.6 !important;
+}
+
+
+/*定义不换行*/
+.m-inline-block {
+    display: inline-block !important;
+}
+
+/*Container*/
+.m-container {
+    max-width: 72em !important;
+    margin: auto !important;
+}
+
+.m-container-small {
+    max-width: 60em !important;
+    margin: auto !important;
+}
+
+/*margin,边距*/
+.m-margin-tb-tiny {
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+
+
+/*设置卡片之间的间隔*/
+.m-margin-top-small {
+    margin-top: 0.5em !important;
+}
+
+.m-margin-top {
+    margin-top: 2em !important;
+}
+
+.m-margin-top-large {
+    margin-top: 1em !important;
+}
+
+.m-margin-bottom-small {
+    margin-bottom: 0.5em !important;
+}
+
+/*定义字体颜色*/
+.m-black {
+    color: #333 !important;
+}
+
+.m-teal {
+    color: #00B5AD !important;
+}
+
+/*定义在右边顶部*/
+.m-right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/*只在手机端显示，在网页端宽屏时候是不显示的。该段代码是有优先级的，如果在@media screen and (max-width: 768px)的下面，
+ 那么缩放的时候，也是没有这个图标显示的
+*/
+.m-mobile-show {
+    display: none !important;
+}
+
+.m-shadow-small {
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/*绝对位置布局*/
+.m-right-bottom {
+    bottom: 0 !important;
+    right: 0 !important;
+}
+
+/* 绝对位置，右边中 */
+.m-right-center{
+    bottom: 200px !important;
+    right: 0 !important;
+}
+
+
+.m-fixed {
+    z-index: 10 !important;
+    position: fixed !important;
+}
+
+
+/*在手机端隐藏按钮*/
+@media screen and (max-width: 768px) {
+    .m-mobile-hide {
+        display: none !important;
+    }
+
+    .m-mobile-show {
+        display: block !important;
+    }
+
+    .m-padded-lr-responsive {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .m-mobile-lr-clear {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .m-mobile-wide {
+        width: 100% !important;
+    }
+}
+
+
+
+
+
+

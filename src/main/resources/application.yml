@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: ali
+  thymeleaf:
+    mode: HTML
+
+visitorAvatar: /images/visitor.jpg
+adminAvatar: /images/me.jpg
+
+

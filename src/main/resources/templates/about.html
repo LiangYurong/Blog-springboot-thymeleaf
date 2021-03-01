@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments::head(~{::title})">
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+
+<div class="container">
+    <main>
+
+        <!--导航-->
+        <nav th:replace="_fragments::menu(5)"></nav>
+
+        <!--中间内容-->
+        <div class="m-container m-padded-tb-big ">
+            <div class="ui container">
+                <div class="ui stackable grid">
+                    <!--左边-->
+                    <div class="ui eleven wide column">
+                        <img src="https://img.rruu.net/image/5f82aef057d78" alt="" class="ui rounded image" >
+                    </div>
+                    <!--右边-->
+                    <div class="ui five wide column">
+                        <div class="ui top attached segment">
+                            <div class="ui header">关于我</div>
+                        </div>
+                        <div class="ui attached segment">
+                            <p class="m-text" th:text="#{index.introduction}">我是羽绒333。</p>
+                        </div>
+                        <div class="ui attached  segment">
+                            <p class="m-text" th:text="#{index.hobby}">羽毛球。</p>
+                        </div>
+                        <div class="ui attached  segment">
+                            <p class="m-text" th:text="#{index.diary}">写日记</p>
+                        </div>
+                        <div class="ui bottom attached segment">
+                            <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+                            <a href="#" class="ui qq circular icon button" data-content="794842744" data-position="bottom center"><i class="qq icon"></i></a>
+                        </div>
+                        <div class="ui wechat-qr flowing popup  transition hidden">
+                            <img src="../static/images/me.jpg" alt="" class="ui rounded image" style="width: 100px">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+<!--底部-->
+<footer th:replace="_fragments::footer"></footer>
+
+<!--/*/<th:block th:replace="_fragments::script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="https//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+<script src="../static/lib/prism/prism.js"></script>
+<script src="../static/lib/tocbot/tocbot.min.js"></script>
+<script src="../static/lib/qrcode/qrcode.min.js"></script>
+<script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<!--/*/</th:block>/*/-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    //qq
+    $('.qq').popup();
+    //微信
+    $('.wechat').popup({
+        popup : $('.wechat-qr'),
+        on: 'hover',
+        position:'bottom center'
+    });
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: root
+    password: '@Mm112358'
+    url: jdbc:mysql://139.129.243.107:3306/blog?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+
+logging:
+  level:
+    root: warn
+    com.springbootblog: info
+  file:
+    name: log/logback.log
+server:
+  port: 80
